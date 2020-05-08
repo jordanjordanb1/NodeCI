@@ -6,7 +6,7 @@ class CustomPage {
   static async build() {
     const browser = await puppeteer.launch({
       headless: true,
-      args: ['--sandbox']
+      args: ['--sandbox'],
     });
 
     const page = await browser.newPage();
@@ -76,8 +76,8 @@ class CustomPage {
     return Promise.all(
       actions.map(({ method, path, data }) => {
         return this[method](path, data);
-      });
-    )
+      })
+    );
   }
 }
 
